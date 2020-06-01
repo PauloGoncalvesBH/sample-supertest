@@ -134,14 +134,14 @@ Para informar em qual ambiente o seu teste irá rodar, informe em `cross-env`, n
 
 **Exemplo**
 _Arquivo_ `hom.config.js`
-_Comando para execução do teste_ `cross-env AMBIENTE=\"hom\" mocha`
+_Comando para execução do teste_ `cross-env AMBIENTE='hom' mocha`
 
 
 Scripts atuais do [package.json](package.json):
 ``` json
 "scripts": {
-  "test": "cross-env AMBIENTE=\"local\" mocha",
-  "test:prod": "cross-env AMBIENTE=\"producao\" mocha"
+  "test": "cross-env AMBIENTE='local' mocha",
+  "test:prod": "cross-env AMBIENTE='producao' mocha"
 },
 ```
 
