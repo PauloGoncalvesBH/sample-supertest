@@ -110,9 +110,9 @@ sample-supertest/
 
 ### Ambiente
 
-Determinados testes possuem dados atrelados a ambiente, como URL, que varia entre ambiente local, de homologação, produção, etc.
+Determinados testes possuem dados atrelados a ambiente, como URL, que varia entre ambiente local, de homologação, produção, etc. Para isso é utilizada a lib [cross-env](https://www.npmjs.com/package/cross-env) para gerenciar as variáveis de ambientes diferentes.
 
-Seguindo o exemplo acima, caso precisarmos setar password para o ambiente `local`, acesse o arquivo [local.config.js](config/local.config.js) e crie a variável `password` com seu respectivo valor.
+Caso precisarmos setar password para o ambiente `local`, acesse o arquivo [local.config.js](config/local.config.js) e crie a variável `password` com seu respectivo valor.
 
 ``` js
 = module.exports = {
@@ -132,12 +132,12 @@ console.log('Valor de Password:', config.password)
 
 Para informar em qual ambiente o seu teste irá rodar, informe em `cross-env`, no script de teste, o nome inicial do arquivo de conf.
 
-**Exemplo**
-_Arquivo_ `hom.config.js`
-_Comando para execução do teste_ `cross-env AMBIENTE='hom' mocha`
+##### Exemplo:
 
+Para testar o ambiente `hom` deve ser criado o arquivo `hom.config.js` e o comando de execução fica igual a `cross-env AMBIENTE='hom' mocha`
 
-Scripts atuais do [package.json](package.json):
+#### Scripts atuais do [package.json](package.json)
+
 ``` json
 "scripts": {
   "test": "cross-env AMBIENTE='local' mocha",
