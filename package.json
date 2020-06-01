@@ -2,7 +2,8 @@
   "name": "sample-supertest",
   "version": "1.0.0",
   "private": true,
-  "author": "Exemplo de estrutura de automação de API feita com Supertest e Mocha",
+  "description": "Exemplo de estrutura de automação de API feita com Supertest e Mocha",
+  "author": "Paulo Gonçalves <paulorochag@hotmail.com> (https://www.linkedin.com/in/paulo-goncalves/)",
   "scripts": {
     "test": "cross-env AMBIENTE=\"local\" mocha",
     "test:prod": "cross-env AMBIENTE=\"producao\" mocha",
