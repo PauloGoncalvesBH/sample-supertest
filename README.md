@@ -39,7 +39,7 @@ Para executar os testes em ambiente local, execute:
 npm test
 ```
 
-É também possível executar os testes para a rota `https://m.localizahertz.com` com o comando, porém **não irá funcionar**
+É também possível executar os testes para a rota `https://www.aaaa.com` com o seguinte comando (**não irá funcionar**):
 
 ```sh
 npm run test:prod
