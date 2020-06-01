@@ -2,6 +2,19 @@
 
 **Exemplo de estrutura de automação de API feita com [Supertest](https://www.npmjs.com/package/supertest) e [Mocha](https://www.npmjs.com/package/mocha)**
 
+- [Instalação e execução](#instalação-e-execução)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Clonando o repositório](#clonando-o-repositório)
+- [Testes de API](#testes-de-api)
+  - [Pré-requisito](#pré-requisito)
+  - [Executando os testes](#executando-os-testes)
+  - [Resultado](#resultado)
+- [Sobre o projeto](#sobre-o-projeto)
+  - [Dependências utilizadas](#dependências-utilizadas)
+  - [Estrutura de diretórios](#estrutura-de-diretórios)
+  - [Ambiente](#ambiente)
+- [Lint](#lint)
+
 ---
 
 ## Instalação e execução
@@ -16,13 +29,15 @@ Todos os comandos abaixo são feitos no terminal
 
 **1** - Faça um clone do repositório e acesse o diretório criado pelo clone.
 
+```sh
+git clone https://github.com/PauloGoncalvesBH/sample-supertest && cd sample-supertest
+```
+
 **2** - Instale as dependências do projeto:
 
 ```sh
-npm ci
+npm install
 ```
-
-O comando [npm ci](https://docs.npmjs.com/cli/ci.html) instala as dependências do projeto de forma limpa. Uma diferença importante para o [npm install](https://docs.npmjs.com/cli/install) é que remove o diretório _node_modules_ e instala as versões listadas no  [package.json](./package.json) e [package-lock.json](./package-lock.json).
 
 ### Testes de API
 
@@ -46,6 +61,12 @@ npm run test:prod
 ```
 
 As variáveis por ambiente estão definidos dentro dos arquivos _*.config.js_ em [config/](config).
+
+#### Resultado
+
+O resultado dos testes são apresentados no terminal e em report HTML gerado com [mochawesome](https://www.npmjs.com/package/mochawesome).
+
+<img src=https://user-images.githubusercontent.com/29241659/83446839-cbe8d380-a425-11ea-991b-c36cb0337859.png height="400">
 
 ## Sobre o projeto
 
