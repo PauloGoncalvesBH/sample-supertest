@@ -36,14 +36,6 @@ describe(rotaUsuarios + ' GET', () => {
   it('Query string - Chave inexistente', async () => {
     const { body } = await request.get(rotaUsuarios).query({ inexistente: 'a' }).expect(400)
 
-    chai.assert.deepEqual(body, {
-      error: {
-        name: 'ValidationError',
-        message: 'Validation Failed',
-        statusCode: 400,
-        error: 'Bad Request',
-        details: [{ inexistente: '"inexistente" is not allowed' }]
-      }
-    })
+    chai.assert.deepEqual(body, { inexistente: 'inexistente não é permitido' })
   })
 })
