@@ -43,8 +43,11 @@ npm install
 
 #### Pré-requisito
 
-> Os testes foram realizados em cima da lib [Serverest](https://www.npmjs.com/package/serverest), que levanta API Rest para automação.
-- Abra o terminal e execute `npx serverest@2`
+[![ServeRest API](https://img.shields.io/badge/API-ServeRest-green?style=for-the-badge)](https://github.com/PauloGoncalvesBH/ServeRest/)
+
+Os testes foram realizados em cima da lib [Serverest](https://www.npmjs.com/package/serverest), que levanta API Rest para automação, então é preciso inicializar a mesma.
+
+Consulte a seção [Inicialização do projeto](https://github.com/PauloGoncalvesBH/ServeRest#serverest) e execute da forma que preferir, utilizando _npx_ ou _docker run_.
 
 #### Executando os testes
 
