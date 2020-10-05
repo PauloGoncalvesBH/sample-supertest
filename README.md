@@ -1,5 +1,8 @@
 # Supertest - Sample
 
+![Testes de API](https://github.com/PauloGoncalvesBH/sample-supertest/workflows/Testes%20de%20API/badge.svg)
+[![ServeRest API](https://img.shields.io/badge/API-ServeRest-green)](https://github.com/PauloGoncalvesBH/ServeRest/)
+
 **Exemplo de estrutura de automação de API feita com [Supertest](https://www.npmjs.com/package/supertest) e [Mocha](https://www.npmjs.com/package/mocha)**
 
 - [Instalação e execução](#instalação-e-execução)
@@ -42,8 +45,6 @@ npm install
 ### Testes de API
 
 #### Pré-requisito
-
-[![ServeRest API](https://img.shields.io/badge/API-ServeRest-green?style=for-the-badge)](https://github.com/PauloGoncalvesBH/ServeRest/)
 
 Os testes foram realizados em cima da lib [Serverest](https://www.npmjs.com/package/serverest), que levanta API Rest para automação, então é preciso inicializar a mesma.
 
