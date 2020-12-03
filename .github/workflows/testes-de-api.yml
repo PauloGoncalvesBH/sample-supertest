@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  teste-das-apis:
+  teste-de-api-com-serverest-local-em-docker:
 
     runs-on: ubuntu-18.04
 
@@ -17,7 +17,21 @@ jobs:
       uses: actions/setup-node@v2.1.1
     - name: Instalar as dependências do projeto
       run: npm ci
-    - name: Executar o container docker do ServeRest
+    - name: Executar o ServeRest localmente com Docker
       run: docker run -d -p 3000:3000 paulogoncalvesbh/serverest:latest
     - name: Executar os testes de API
       run: npm test
+      
+  teste-de-api-em-serverest-dev:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+    - name: Setup do Node.js
+      uses: actions/setup-node@v2.1.1
+    - name: Instalar as dependências do projeto
+      run: npm ci
+    - name: Executar os testes de API
+      run: npm run test:prod

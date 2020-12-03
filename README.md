@@ -44,24 +44,22 @@ npm install
 
 ### Testes de API
 
-#### Pré-requisito
-
-Os testes foram realizados em cima da lib [Serverest](https://www.npmjs.com/package/serverest), que levanta API Rest para automação, então é preciso inicializar a mesma.
-
-Consulte a seção [Inicialização do projeto](https://github.com/PauloGoncalvesBH/ServeRest#serverest) e execute da forma que preferir, utilizando _npx_ ou _docker run_.
+Os testes foram realizados em cima do [Serverest](https://github.com/PauloGoncalvesBH/ServeRest), que fornece rotas REST para fins de estudos.
 
 #### Executando os testes
 
-Para executar os testes em ambiente local, execute:
+Caso queira apenas rodar os testes, sem precisar subir ambiente, execute o seguinte comando:
 
-```sh
-npm test
-```
-
-É também possível executar os testes para a rota `https://www.aaaa.com` com o seguinte comando (**não irá funcionar**):
+> Os testes serão executados em cima da página [serverest.dev](http://serverest.dev/)
 
 ```sh
 npm run test:prod
+```
+
+Para executar os testes localmente (_http://localhost:3000_) é preciso subir o ambiente local utilizando NPM ou Docker. [Verifique aqui como](https://github.com/PauloGoncalvesBH/ServeRest#ambientes-dispon%C3%ADveis). Após isso execute:
+
+```sh
+npm test
 ```
 
 As variáveis por ambiente estão definidos dentro dos arquivos _*.config.js_ em [config/](config).
