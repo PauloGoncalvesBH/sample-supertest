@@ -1,3 +1,3 @@
 module.exports = {
-  url: 'https://www.serverest.dev'
+  url: 'https://serverest.dev'
 }
