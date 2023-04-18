@@ -5,15 +5,14 @@
   "description": "Exemplo de estrutura de automação de API feita com Supertest e Mocha",
   "author": "Paulo Gonçalves <github@paulog.dev> (https://www.linkedin.com/in/paulo-goncalves/)",
   "scripts": {
-    "test": "cross-env AMBIENTE='local' mocha",
-    "test:prod": "cross-env AMBIENTE='producao' mocha",
+    "test": "AMBIENTE='local' mocha",
+    "test:prod": "AMBIENTE='producao' mocha",
     "lint": "standard",
     "lint:fix": "standard --fix"
   },
-  "devDependencies": {
+  "dependencies": {
     "@hapi/joi": "^17.1.1",
     "chai": "^4.2.0",
-    "cross-env": "^7.0.2",
     "faker": "^4.1.0",
     "mocha": "^10.2.0",
     "mochawesome": "^7.1.3",

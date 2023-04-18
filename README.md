@@ -66,7 +66,6 @@ O resultado dos testes são apresentados no terminal e em report HTML gerado com
 | [Faker](https://www.npmjs.com/package/faker)| Gera dados aleatórios para serem utilizados nos testes
 | [Mochawesome](https://www.npmjs.com/package/mochawesome)| Gera report HTML
 | [Standard](https://www.npmjs.com/package/standard)| Linter e formatter do código JS
-| [Cross-env](https://www.npmjs.com/package/cross-env)| Criação de variável de ambiente
 
 As dependências estão definidas no [package.json](./package.json).
 
@@ -99,7 +98,7 @@ sample-supertest/
 
 ### Ambiente
 
-Determinados testes possuem dados atrelados a ambiente, como URL, que varia entre ambiente local, de homologação, produção, etc. Para isso é utilizada a lib [cross-env](https://www.npmjs.com/package/cross-env) para gerenciar as variáveis de ambientes diferentes.
+Determinados testes possuem dados atrelados a ambiente, como URL, que varia entre ambiente local, de homologação, produção, etc.
 
 Caso precisarmos setar password para o ambiente `local`, acesse o arquivo [local.config.js](config/local.config.js) e crie a variável `password` com seu respectivo valor.
 
@@ -119,18 +118,18 @@ console.log('Valor de Password:', config.password)
 // Valor de Password: SENHA_PRODUCAO_123
 ```
 
-Para informar em qual ambiente o seu teste irá rodar, informe em `cross-env`, no script de teste, o nome inicial do arquivo de conf.
+Para informar em qual ambiente o seu teste irá rodar informe no script de teste o nome inicial do arquivo de conf.
 
 ##### Exemplo:
 
-Para testar o ambiente `hom` deve ser criado o arquivo `hom.config.js` e o comando de execução fica igual a `cross-env AMBIENTE='hom' mocha`
+Para testar o ambiente `hom` deve ser criado o arquivo `hom.config.js` e o comando de execução fica igual a `AMBIENTE='hom' mocha`
 
 #### Scripts atuais do [package.json](package.json)
 
 ``` json
 "scripts": {
-  "test": "cross-env AMBIENTE='local' mocha",
-  "test:prod": "cross-env AMBIENTE='producao' mocha"
+  "test": "AMBIENTE='local' mocha",
+  "test:prod": "AMBIENTE='producao' mocha"
 },
 ```
 
