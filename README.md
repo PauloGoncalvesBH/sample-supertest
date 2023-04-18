@@ -24,23 +24,7 @@
 
 ### Pré-requisitos
 
-- [Git](https://git-scm.com/download/) e [Node.js](https://nodejs.org/en/download/) instalados.
-
-### Clonando o repositório
-
-Todos os comandos abaixo são feitos no terminal
-
-**1** - Faça um clone do repositório e acesse o diretório criado pelo clone.
-
-```sh
-git clone https://github.com/PauloGoncalvesBH/sample-supertest && cd sample-supertest
-```
-
-**2** - Instale as dependências do projeto:
-
-```sh
-npm install
-```
+- [Docker](https://docs.docker.com/get-docker/) e [Docker-compose](https://docs.docker.com/compose/install/) instalados.
 
 ### Testes de API
 
@@ -48,23 +32,23 @@ Os testes foram realizados em cima do [Serverest](https://github.com/PauloGoncal
 
 #### Executando os testes
 
-Caso queira apenas rodar os testes, sem precisar subir ambiente, execute o seguinte comando:
-
-> Os testes serão executados em cima da página [serverest.dev](http://serverest.dev/)
+Para executar os testes direcionados para o ambiente de produção ([https://serverest.dev](http://serverest.dev/)), execute:
 
 ```sh
-npm run test:prod
+make test-prod
 ```
 
-Para executar os testes localmente (_http://localhost:3000_) é preciso subir o ambiente local utilizando NPM ou Docker. [Verifique aqui como](https://github.com/PauloGoncalvesBH/ServeRest#ambientes-dispon%C3%ADveis). Após isso execute:
+Para executar os testes em ServeRest executando localmente (_http://localhost:3000_), execute:
 
 ```sh
-npm test
+make test-local
 ```
+
+> Antes do teste acima ser executado o container do ServeRest é iniciado localmente
 
 As variáveis por ambiente estão definidos dentro dos arquivos _*.config.js_ em [config/](config).
 
-#### Resultado
+### Resultado
 
 O resultado dos testes são apresentados no terminal e em report HTML gerado com [mochawesome](https://www.npmjs.com/package/mochawesome).
 
@@ -99,7 +83,10 @@ sample-supertest/
  |       └─ post.test.js
  |   └─ utils/
  ├─ .mocharc.js
- └─ package.json
+ ├─ package.json
+ ├─ Makefile
+ ├─ docker-compose.yml
+ └─ Dockerfile
 ```
 
 - :file_folder: [config/](config): Dir com as variáveis que dependem do ambiente (ex.: _url, senha, password_)

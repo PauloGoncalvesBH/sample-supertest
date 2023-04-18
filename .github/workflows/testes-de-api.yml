@@ -6,7 +6,27 @@ on:
   workflow_dispatch:
 
 jobs:
-  teste-de-api-com-serverest-local-em-docker:
+  docker-teste-de-api-com-serverest-local-em-docker:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+    - name: Executar os testes de API localmente
+      run: make test-local
+
+  docker-teste-de-api-em-serverest-dev:
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: Checkout do repositório
+      uses: actions/checkout@v2
+    - name: Executar os testes de API em produção
+      run: make test-prod
+
+  node-teste-de-api-com-serverest-local-em-docker:
 
     runs-on: ubuntu-18.04
 
@@ -19,10 +39,10 @@ jobs:
       run: npm ci
     - name: Executar o ServeRest localmente com Docker
       run: docker run -d -p 3000:3000 paulogoncalvesbh/serverest:latest
-    - name: Executar os testes de API
+    - name: Executar os testes de API localmente
       run: npm test
-      
-  teste-de-api-em-serverest-dev:
+
+  node-teste-de-api-em-serverest-dev:
 
     runs-on: ubuntu-18.04
 
@@ -33,5 +53,5 @@ jobs:
       uses: actions/setup-node@v2.1.1
     - name: Instalar as dependências do projeto
       run: npm ci
-    - name: Executar os testes de API
+    - name: Executar os testes de API em produção
       run: npm run test:prod

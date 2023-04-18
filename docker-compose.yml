@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  base:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./report:/app/report
+
+  test-prod:
+    extends: base
+    command: npm run test:prod
+
+  serverest:
+    image: paulogoncalvesbh/serverest:latest
+
+  test-local:
+    extends: base
+    command: npm test
+    depends_on:
+      - serverest
+    network_mode: 'service:serverest'
