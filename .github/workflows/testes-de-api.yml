@@ -8,33 +8,35 @@ on:
 jobs:
   docker-teste-de-api-com-serverest-local-em-docker:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout do repositório
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+    - run: docker-compose build test-local
     - name: Executar os testes de API localmente
       run: make test-local
 
   docker-teste-de-api-em-serverest-dev:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout do repositório
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+    - run: docker-compose build test-prod
     - name: Executar os testes de API em produção
       run: make test-prod
 
   node-teste-de-api-com-serverest-local-em-docker:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout do repositório
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup do Node.js
-      uses: actions/setup-node@v2.1.1
+      uses: actions/setup-node@v3
     - name: Instalar as dependências do projeto
       run: npm ci
     - name: Executar o ServeRest localmente com Docker
@@ -44,13 +46,13 @@ jobs:
 
   node-teste-de-api-em-serverest-dev:
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout do repositório
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
     - name: Setup do Node.js
-      uses: actions/setup-node@v2.1.1
+      uses: actions/setup-node@v3
     - name: Instalar as dependências do projeto
       run: npm ci
     - name: Executar os testes de API em produção
