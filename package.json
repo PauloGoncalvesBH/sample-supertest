@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Exemplo de estrutura de automação de API feita com Supertest e Mocha",
-  "author": "Paulo Gonçalves <github@paulog.dev> (https://www.linkedin.com/in/paulo-goncalves/)",
+  "author": "Paulo Gonçalves <supertest@github.paulog.dev> (https://www.linkedin.com/in/paulo-goncalves/)",
   "scripts": {
     "test": "AMBIENTE='local' mocha",
     "test:prod": "AMBIENTE='producao' mocha",
